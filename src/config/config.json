@@ -1,0 +1,47 @@
+{
+  "development": {
+    "database": "d2fanichs2plu6",
+    "dialect": "postgres",
+    "protocol": "postgres",
+    "port": 5432,
+    "host": "ec2-52-204-20-42.compute-1.amazonaws.com",
+    "username": "jzdickfvxylmtl",
+    "password": "5719621b71132189115de68200303da3ae83d2cf21ed38df4b9707e20aa2b235",
+    "dialectOptions": {
+      "ssl": {
+        "rejectUnauthorized": false
+      }
+    },
+    "pool": {
+      "max": 20,
+      "min": 0,
+      "idle": 5000
+    },
+    "define": {
+      "timestamps": true,
+      "underscored": true
+    }
+  },
+  "test": {
+    "dialect": "postgres",
+    "host": "localhost",
+    "username": "postgres",
+    "password": "root",
+    "database": "db_tax",
+    "define": {
+      "timestamps": true,
+      "underscored": true
+    }
+  },
+  "production": {
+    "dialect": "",
+    "host": "",
+    "username": "",
+    "password": "",
+    "database": "",
+    "define": {
+      "timestamps": true,
+      "underscored": true
+    }
+  }
+}
