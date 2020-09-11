@@ -11,4 +11,4 @@ app.use(express.json());
 app.use(routes);
 
 let port = process.env.PORT || 8080;
-app.listen(8080);
+app.listen(port);
