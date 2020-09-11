@@ -10,9 +10,12 @@ module.exports = {
         autoIncrement: true,
         allowNull: false
       },
-      nome_cliente: {
-        type: Sequelize.STRING(100),
-        allowNull: false
+      id_usuario:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references:{model: 'usuarios', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT'
       },
       cpf_cliente: {
         type: Sequelize.STRING(11),

@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 const dbConfig = require('../config/config.json');
 
 const Cliente = require('../models/Cliente');
+const Usuario = require('../models/Usuario');
 
 
 
@@ -9,11 +10,14 @@ const Cliente = require('../models/Cliente');
 const connection = new Sequelize(dbConfig.development);
 
 Cliente.init(connection);
+Usuario.init(connection);
+
 
 
 // console.log(connection.models)
 
-// Empresa.associate(connection.models);
+Cliente.associate(connection.models);
+Usuario.associate(connection.models);
 
 
 

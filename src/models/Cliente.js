@@ -3,19 +3,6 @@ const { cpf } = require('cpf-cnpj-validator');
 class Cliente extends Model {
     static init(connection) {
         super.init({
-            nome_cliente:{
-                type: DataTypes.STRING,
-                allowNull: false,
-                validate: {
-                    notEmpty:{
-                        msg: "Esse campo não pode ser vazio"
-                    },
-                    len: {
-                        args: [2,100],
-                        msg: "Esse campo deve ter entre 2 e 100 caracteres"
-                    }
-                }
-            },
             cpf_cliente: {
                 type: DataTypes.STRING,
                 allowNull: false,
@@ -122,7 +109,7 @@ class Cliente extends Model {
         })
     }
     static associate(models){
-    
+        this.belongsTo(models.Usuario, {foreignKey: 'id_usuario'});
     }
 }
 

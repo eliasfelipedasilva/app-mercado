@@ -3,22 +3,23 @@ const Op = Sequelize.Op;
 module.exports = {
     async filtrar(filter){
         let whereCliente = { where: {} };
+        let whereUsuario = { where: {} };
 
             let filterNome;
             let filterCpf;
 
-            if (filter.nome_cliente != null) {
+            if (filter.nome_usuario != null) {
 
 
                 //verificando se ha mais de um tipo de status no filtro
-                if (Array.isArray(filter.nome_cliente)) {
-                    for (i in filter.nome_cliente) {
-                        filterNome = "%"+filter.nome_cliente[0]+"%";
+                if (Array.isArray(filter.nome_usuario)) {
+                    for (i in filter.nome_usuario) {
+                        filterNome = "%"+filter.nome_usuario[0]+"%";
                     }
-                } else if (filter.nome_cliente) {
-                    filterNome = "%"+filter.nome_cliente+"%";
+                } else if (filter.nome_usuario) {
+                    filterNome = "%"+filter.nome_usuario+"%";
                 }
-                whereCliente.where.nome_cliente = { [Op.iLike]: filterNome }
+                whereUsuario.where.nome_usuario = { [Op.iLike]: filterNome }
 
             }
 
@@ -38,6 +39,11 @@ module.exports = {
 
             }
 
-            return whereCliente;
+            let filtros = {
+                whereCliente : whereCliente,
+                whereUsuario: whereUsuario
+            }
+
+            return filtros
     }
 }

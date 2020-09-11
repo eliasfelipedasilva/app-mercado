@@ -3,20 +3,9 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
-    await queryInterface.bulkInsert('clientes', [{
-      nome_cliente: 'Elias Felipe Da Silva',
-      cpf_cliente: '11237405939',
-      endereco_numero: '948',
-      endereco_rua: 'Rua Luiz Gama',
-      endereco_bairro: 'Vila Santana',
-      endereco_complemento: 'Proximo á pracinha',
-      endereco_cidade: 'Cambará',
-      endereco_uf: 'PR',
-      created_at: new Date(),
-      updated_at: new Date()
-    },
+    await queryInterface.bulkInsert('clientes', [
     {
-      nome_cliente: 'João Alves Monteiro',
+      id_usuario: 3,
       cpf_cliente: '00512405878',
       endereco_numero: '1455',
       endereco_rua: 'Rua Do Ignes',
